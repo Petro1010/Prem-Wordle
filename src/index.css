@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F8FF;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header--container {
+  height: 100px;
+  font-family: 'Inter', 'Karla';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  line-height: 18px;
+  letter-spacing: -0.075em;
+  background-color: #37003c;
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 55px;
+  margin-top: 15px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #37003c;
+  bottom: 0%;
+  position: fixed;
+  width: 100%;
+  font-family: 'Inter';
+  color: white;
+  padding: 5px;
+}
+
+.submission {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submission--button {
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 42px;
+  cursor: pointer;
+  color: white;
+  background-color: #37003c;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.submission--button:hover {
+  background-color: #401945;
+
+}
+
+.input--container {
+  /*margin: auto;*/
+  width: 494px;
+}
+
+input {
+  margin-top: 40px;
+  width: 450px;
+  padding: 20px;
+  height: 40px;
+  font-family: 'Inter', 'Karla';
+  font-weight: bold;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.suggestions {
+  box-sizing: border-box;
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 494px;
+  font-family: 'Inter', 'Karla';
+  font-size: 18px;
+  position: absolute;
+}
+
+.suggestions > li {
+  padding: 20px;
+  background-color: #F8F8FF;
+}
+
+.suggestion--active {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+.guess--container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 700px;
+}
+
+.guess {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+}
+
+.guess:not(:first-of-type){
+  border-top: 1px solid #37003c;
+}
+
+.guess > div, .guess--header > p {
+  /* Next lines specify the size of the textbox*/
+  flex-grow: 0;     /* do not grow   - initial value: 0 */
+  flex-shrink: 0;   /* do not shrink - initial value: 1 */
+  flex-basis: 15%; /* width/height  - initial value: auto */
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.guess > div {
+  display: flex;
+  margin: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #F8F8FF;
+  background-color: #f2f2f2;
+  /*Prevents the text from overflowing*/
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guess > h4, .guess--header > .name {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 20%;
+  min-width: 0;
+  margin: 0;
+  margin-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*Prevents the text from overflowing*/
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guess--header {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #37003c;
+  box-shadow: 0 3px 2px -2px #37003c;
+  color: #37003c;
+  font-weight: bold;
+}
+
+.guesses {
+  margin-top: 5px;
+  max-height: 300px;  /* Makes the container of our guesses scrollable */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  width: 95%;
+  height: 100%;
+}
+
+.modal--content {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.close {
+  color: Black;
+  float: right;
+  font-size: 30px;
+}
+
+.close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.popup--info {
+  text-align: center;
+  color: #37003c;
+  font-size: larger;
+}
