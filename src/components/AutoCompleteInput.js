@@ -38,12 +38,6 @@ function AutoCompleteInput(props){
         setActiveSuggestion(filteredSuggestions.indexOf(event.target.innerText));
     }
 
-    //make the guess and reset the input
-    function submitGuess(event){
-        props.makeGuess(textInput);
-        setTextInput("");
-    }
-
     return (
         <div className="submission">
             <div className="input--container">
@@ -79,7 +73,6 @@ function AutoCompleteInput(props){
                     //create all the list components of the current suggestion we have and display them                
                 }
             </div>
-            <button className="submission--button" onClick={submitGuess}>Guess</button>
         </div>
     );
 };

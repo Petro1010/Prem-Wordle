@@ -50,7 +50,7 @@ code {
   gap: 0.5em;
 }
 
-.submission--button {
+/* .submission--button {
   height: 80px;
   padding-left: 20px;
   padding-right: 20px;
@@ -66,7 +66,7 @@ code {
 .submission--button:hover {
   background-color: #401945;
 
-}
+} */
 
 .input--container {
   /*margin: auto;*/
