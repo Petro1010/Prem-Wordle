@@ -26,10 +26,12 @@ function AutoCompleteInput(props){
 
     //deals with the selection of player from the list
     function selectPlayer(event){
-        setTextInput(event.target.innerText); //set input to whatever the list item text was
+        //setTextInput(event.target.innerText); //set input to whatever the list item text was
         setFilteredSuggestions([]); //get rid of suggestions
         setActiveSuggestion(0);
         setShowSuggestions(false);
+        props.makeGuess(event.target.innerText);
+        setTextInput("");
     }
 
     function makeActive(event){

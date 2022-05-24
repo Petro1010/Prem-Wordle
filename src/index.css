@@ -15,6 +15,7 @@ code {
 
 .header--container {
   height: 100px;
+  max-width: 100%;
   font-family: 'Inter', 'Karla';
   font-style: normal;
   font-weight: 500;
@@ -46,7 +47,7 @@ code {
 .submission {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5em;
 }
 
 .submission--button {
@@ -69,12 +70,14 @@ code {
 
 .input--container {
   /*margin: auto;*/
-  width: 494px;
+  max-width: 494px;
+  width: 50%;
 }
 
 input {
   margin-top: 40px;
-  width: 450px;
+  max-width: 450px;
+  width: 100%;
   padding: 20px;
   height: 40px;
   font-family: 'Inter', 'Karla';
@@ -92,7 +95,8 @@ input {
   margin-top: 0;
   max-height: 200px;
   overflow-y: auto;
-  width: 494px;
+  width: inherit;
+  max-width: 494px;
   font-family: 'Inter', 'Karla';
   font-size: 18px;
   position: absolute;
@@ -117,7 +121,7 @@ input {
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 40px;
-  width: 700px;
+  max-width: 700px;
 }
 
 .guess {
@@ -171,7 +175,7 @@ input {
 
 .guess--header {
   display: flex;
-  width: 98%;
+  max-width: 98%;
   align-items: center;
   text-align: center;
   border-bottom: 1px solid #37003c;

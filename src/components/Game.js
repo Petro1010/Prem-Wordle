@@ -56,10 +56,10 @@ function Game(){
 
     //check if all guesses have been used
     React.useEffect(() => {
-        console.log(guesses)
+        //console.log(guesses)
         if (guesses === 20){
             setShowPopUp(true);
-            console.log("Used all guesses!");
+            //console.log("Used all guesses!");
         }
     }, [guesses])
 
