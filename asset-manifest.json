@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/prem-wordle/static/css/main.8a81113b.css",
-    "main.js": "/prem-wordle/static/js/main.1b16bc79.js",
+    "main.css": "/prem-wordle/static/css/main.18f0d46f.css",
+    "main.js": "/prem-wordle/static/js/main.9178e4c5.js",
     "static/media/players.txt": "/prem-wordle/static/media/players.af0d783305c3c7d2a915.txt",
     "index.html": "/prem-wordle/index.html",
-    "main.8a81113b.css.map": "/prem-wordle/static/css/main.8a81113b.css.map",
-    "main.1b16bc79.js.map": "/prem-wordle/static/js/main.1b16bc79.js.map"
+    "main.18f0d46f.css.map": "/prem-wordle/static/css/main.18f0d46f.css.map",
+    "main.9178e4c5.js.map": "/prem-wordle/static/js/main.9178e4c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a81113b.css",
-    "static/js/main.1b16bc79.js"
+    "static/css/main.18f0d46f.css",
+    "static/js/main.9178e4c5.js"
   ]
 }
