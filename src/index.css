@@ -50,23 +50,23 @@ code {
   gap: 0.5em;
 }
 
-/* .submission--button {
-  height: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 42px;
+.restart--button {
+  height: 3.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 1.5em;
   cursor: pointer;
   color: white;
   background-color: #37003c;
-  font-size: 18px;
+  font-size: 2.5vh;
   border-radius: 5px;
   border: 0;
 }
 
-.submission--button:hover {
+.restart--button:hover {
   background-color: #401945;
 
-} */
+}
 
 .input--container {
   /*margin: auto;*/
@@ -79,7 +79,7 @@ input {
   max-width: 450px;
   width: 100%;
   padding: 20px;
-  height: 40px;
+  height: 5vh;
   font-family: 'Inter', 'Karla';
   font-weight: bold;
   font-size: 18px;
@@ -124,24 +124,25 @@ input {
   max-width: 700px;
 }
 
-.guess {
+.guess, .guess--header {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 80px;
+  height: 10vh;
 }
 
 .guess:not(:first-of-type){
   border-top: 1px solid #37003c;
 }
 
-.guess > div, .guess--header > p {
+.guess > div, .guess--header > div {
   /* Next lines specify the size of the textbox*/
   flex-grow: 0;     /* do not grow   - initial value: 0 */
   flex-shrink: 0;   /* do not shrink - initial value: 1 */
   flex-basis: 15%; /* width/height  - initial value: auto */
   min-width: 0;
   text-overflow: ellipsis;
+  font-size: 2.5vh;
 }
 
 .guess > div {
@@ -158,26 +159,24 @@ input {
   text-overflow: ellipsis;
 }
 
-.guess > h4, .guess--header > .name {
+.guess > .name, .guess--header > .name {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 20%;
   min-width: 0;
   margin: 0;
-  margin-right: 15px;
+  margin-right: 1.5vw;
   padding-top: 10px;
   padding-bottom: 10px;
   /*Prevents the text from overflowing*/
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 2.5vh;
 }
 
 .guess--header {
-  display: flex;
   max-width: 98%;
-  align-items: center;
-  text-align: center;
   border-bottom: 1px solid #37003c;
   box-shadow: 0 3px 2px -2px #37003c;
   color: #37003c;
@@ -223,5 +222,5 @@ input {
 .popup--info {
   text-align: center;
   color: #37003c;
-  font-size: larger;
+  font-size: 2vh;
 }

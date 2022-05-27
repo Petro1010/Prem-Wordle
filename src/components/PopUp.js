@@ -11,7 +11,7 @@ function PopUp(props){
                     <h1>{props.won ? "You Won!" : "You Lost :("}</h1>
                     <h3>Correct Player:</h3>
                     <p>{props.correctPlayer.name}</p>
-                    <button className="submission--button" onClick={props.playAgain}>Play Again</button>
+                    <button className="restart--button" onClick={props.playAgain}>Play Again</button>
                 </div>
                 
             </div>

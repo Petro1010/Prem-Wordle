@@ -11,7 +11,7 @@ function Game(){
     const [players, setPlayers] = React.useState([]);
     //state to contain the random player to try and guess
     const [randomPlayer, setRandomPlayer] = React.useState("");
-    //console.log(randomPlayer)
+    console.log(randomPlayer)
     //current guesses made by the player
     const [currentGuesses, setCurrentGuesses] = React.useState([]);
     //state to control popUp
@@ -25,10 +25,8 @@ function Game(){
         fetch(rawData)
          .then(r => r.text())
          .then(text => {
-            //console.log(text);
             let data = JSON.parse(text);
             setPlayers(data);
-            //console.log(data);
             setRandomPlayer(data[Math.floor(Math.random()*data.length)])
          });
     },[]);
@@ -36,7 +34,7 @@ function Game(){
     function makeGuess(playerName) {
         if (!won && guesses < 20){
             const player = players.filter(player => player.name === playerName)[0] //filter data for the specfic player
-            if (!player || currentGuesses.includes(player)) {
+            if (currentGuesses.includes(player)) {
                 alert("Invalid Guess!")
             } else {
                 setCurrentGuesses(prevGuesses => [...prevGuesses, player]);
@@ -56,10 +54,8 @@ function Game(){
 
     //check if all guesses have been used
     React.useEffect(() => {
-        //console.log(guesses)
         if (guesses === 20){
             setShowPopUp(true);
-            //console.log("Used all guesses!");
         }
     }, [guesses])
 
@@ -95,12 +91,12 @@ function Game(){
             <AutoCompleteInput suggestions={players.map(player => player.name)} guesses={guesses} makeGuess={makeGuess}/>
             <div className="guess--container">
                 <div className="guess--header">
-                    <p className="name">Name</p>
-                    <p>Team</p>
-                    <p>Nation</p>
-                    <p>Age</p>
-                    <p>Height</p>
-                    <p>Position</p>
+                    <div className="name">NAME</div>
+                    <div>TEAM</div>
+                    <div>NAT</div>
+                    <div>AGE</div>
+                    <div>HT</div>
+                    <div>POS</div>
                 </div>
                 <div className="guesses">
                     {guessElements}

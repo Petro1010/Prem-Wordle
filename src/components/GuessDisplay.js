@@ -7,7 +7,7 @@ function GuessDisplay(props) {
     return (
         //conditionally render background colour to show if the property is correct or not
         <div className="guess">
-            <h4>{props.name}</h4>
+            <h4 className="name">{props.name}</h4>
             <div style={{backgroundColor: props.correct.team === props.team ? "#37be75" : "#f2f2f2"}}>{props.team}</div>
             <div style={{backgroundColor: props.correct.nation === props.nation ? "#37be75" : "#f2f2f2"}}>{props.nation}</div>
             <div 
