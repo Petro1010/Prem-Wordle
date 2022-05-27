@@ -75,14 +75,14 @@ code {
 }
 
 input {
+  box-sizing: border-box;
   margin-top: 40px;
-  max-width: 450px;
   width: 100%;
-  padding: 20px;
-  height: 5vh;
+  padding: 3vh;
+  height: 12vh;
   font-family: 'Inter', 'Karla';
   font-weight: bold;
-  font-size: 18px;
+  font-size: 2.5vh;
   background-color: transparent;
 }
 
@@ -98,7 +98,7 @@ input {
   width: inherit;
   max-width: 494px;
   font-family: 'Inter', 'Karla';
-  font-size: 18px;
+  font-size: 2.5vh;
   position: absolute;
 }
 
