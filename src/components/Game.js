@@ -11,7 +11,6 @@ function Game(props){
     const [players, setPlayers] = React.useState([]);
     //state to contain the random player to try and guess
     const [randomPlayer, setRandomPlayer] = React.useState("");
-    console.log(randomPlayer)
     //current guesses made by the player
     const [currentGuesses, setCurrentGuesses] = React.useState([]);
     //state to control popUp

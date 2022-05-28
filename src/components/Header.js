@@ -12,7 +12,7 @@ function Header(props) {
             </div>
             <div className="header--buttons">
                 <input type="image" alt="" src={statIcon} onClick={props.statOnClick} className="stats--button"/>
-                <input type="image" alt="" src={helpIcon} className="stats--button"/>
+                <input type="image" alt="" src={helpIcon} onClick={props.helpOnClick} className="stats--button"/>
             </div>
             
         </div>

@@ -260,3 +260,12 @@ code {
   width: 8vh;
   height: 5vh;
 }
+
+.help--info {
+  font-size: 2vh;
+}
+
+.help--info > h1 {
+  text-align: center;
+  font-size: 2.5vh;
+}

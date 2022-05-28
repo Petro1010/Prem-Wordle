@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Game from "./components/Game";
 import Footer from "./components/Footer";
 import StatPopUp from "./components/StatPopUp";
+import HelpPopUp from "./components/HelpPopUp";
 
 function App() {
   //state to contain player stats
@@ -13,16 +14,21 @@ function App() {
   });
   //state to contain if stat pop up should be shown
   const [showStat, setShowStat] = React.useState(false);
+  //state to contain if help pop up should be shown
+  const [showHelp, setShowHelp] = React.useState(false);
 
   //use local storage to store the players stats
   React.useEffect(() => {
-    console.log(stats.lowestGuesses);
     localStorage.setItem("stats", JSON.stringify(stats));
   }, [stats])
 
   function toggleStats() {
-    setShowStat(prev => !prev);
+    if (!showHelp) setShowStat(prev => !prev);
   };
+
+  function toggleHelp(){
+    if (!showStat) setShowHelp(prev => !prev);
+  }
 
   //update the stats within the game!!
   //update played, update won, update total guesses functions
@@ -57,8 +63,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header statOnClick={toggleStats} />
-      {showStat && <StatPopUp onClose={toggleStats} {...stats} />}
+      <Header statOnClick={toggleStats} helpOnClick={toggleHelp} />
+      {!showHelp && showStat && <StatPopUp onClose={toggleStats} {...stats} />}
+      {!showStat && showHelp && <HelpPopUp onClose={toggleHelp}/>}
       <Game gamePlayed={updatePlayed} gameWon={updateWins} lowerGuess={updateLowGuess}/>
       <Footer />
     </div>
