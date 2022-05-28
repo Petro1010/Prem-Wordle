@@ -1,10 +1,20 @@
 import React from "react";
+import statIcon from "../images/statsIcon.png"
+import helpIcon from "../images/helpIcon.png"
 
-function Header() {
+function Header(props) {
     return (
         <div className="header--container">
-            <h1 className="title">Skrtel</h1>
-            <h4>Premier League Player Guessing Game</h4>
+            <div className="header--placeholder"></div>
+            <div className="header--title">
+                <h1 className="title">Skrtel</h1>
+                <h4>Premier League Player Guessing Game</h4>
+            </div>
+            <div className="header--buttons">
+                <input type="image" alt="" src={statIcon} onClick={props.statOnClick} className="stats--button"/>
+                <input type="image" alt="" src={helpIcon} className="stats--button"/>
+            </div>
+            
         </div>
     );
 };

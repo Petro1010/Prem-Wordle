@@ -14,23 +14,50 @@ code {
 }
 
 .header--container {
-  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: 16vh;
   max-width: 100%;
   font-family: 'Inter', 'Karla';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 2.5vh;
   color: white;
-  line-height: 18px;
+  line-height: 2.5vh;
   letter-spacing: -0.075em;
   background-color: #37003c;
-  text-align: center;
-  padding: 10px;
 }
 
 .title {
-  font-size: 55px;
-  margin-top: 15px;
+  font-size: 8vh;
+  margin-top: 6vh;
+}
+
+.header--buttons {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.header--title {
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.header--placeholder {
+  width: 70px;
+  justify-content: flex-start;
+}
+
+.stats--button {
+  width: 30px;
+  height: 30px;
 }
 
 .footer {
@@ -69,12 +96,11 @@ code {
 }
 
 .input--container {
-  /*margin: auto;*/
   max-width: 494px;
   width: 50%;
 }
 
-input {
+.input--form {
   box-sizing: border-box;
   margin-top: 40px;
   width: 100%;

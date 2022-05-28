@@ -2,22 +2,22 @@ import React from "react";
 import AutoCompleteInput from "./AutoCompleteInput";
 import GuessDisplay from "./GuessDisplay";
 import rawData from "../players.txt";
-import PopUp from "./PopUp";
+import GamePopUp from "./GamePopUp";
 
-function Game(){
+function Game(props){
     //state to contain number of guesses
     const [guesses, setGuesses] = React.useState(0);
     //state to contain the pl players
     const [players, setPlayers] = React.useState([]);
     //state to contain the random player to try and guess
     const [randomPlayer, setRandomPlayer] = React.useState("");
+    console.log(randomPlayer)
     //current guesses made by the player
     const [currentGuesses, setCurrentGuesses] = React.useState([]);
     //state to control popUp
     const [showPopUp, setShowPopUp] = React.useState(false);
     //keep track of win or lose
     const [won, setWon] = React.useState(false);
-
 
     //set up the players, with raw data for now
     React.useEffect(() => {
@@ -30,16 +30,21 @@ function Game(){
          });
     },[]);
 
+    const updateLowestGuess = () => props.lowerGuess(guesses + 1);
+
     function makeGuess(playerName) {
         if (!won && guesses < 20){
             const player = players.filter(player => player.name === playerName)[0] //filter data for the specfic player
             if (currentGuesses.includes(player)) {
                 alert("Invalid Guess!")
             } else {
+                if (!currentGuesses.length) props.gamePlayed(); //once the first guess is made, it counts as a game played
                 setCurrentGuesses(prevGuesses => [...prevGuesses, player]);
                 if (randomPlayer.pid === player.pid){
                     setShowPopUp(true);
                     setWon(true);
+                    props.gameWon();
+                    updateLowestGuess();
                     return;
                 }
                 setGuesses(num => (num + 1));
@@ -86,7 +91,7 @@ function Game(){
     return (
         //Send in the player names as autoFill suggestions
         <div className="game--container">
-            {showPopUp && <PopUp onClose={togglePopUp} correctPlayer={randomPlayer} won={won} playAgain={restartGame}/>}
+            {showPopUp && <GamePopUp onClose={togglePopUp} correctPlayer={randomPlayer} won={won} playAgain={restartGame}/>}
             <AutoCompleteInput suggestions={players.map(player => player.name)} guesses={guesses} makeGuess={makeGuess}/>
             <div className="guess--container">
                 <div className="guess--header">

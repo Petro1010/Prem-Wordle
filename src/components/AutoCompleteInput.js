@@ -32,7 +32,8 @@ function AutoCompleteInput(props){
     return (
         <div className="submission">
             <div className="input--container">
-                <input 
+                <input
+                    className="input--form"
                     type="text"
                     placeholder={`Guess ${props.guesses + 1} of 20`}
                     onChange={handleChange}
