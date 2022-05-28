@@ -1,0 +1,22 @@
+export default {
+    ArsenalFC: "https://s.hs-data.com/bilder/wappen/mini/555.gif?fallback=png",
+    AstonVilla: "https://s.hs-data.com/bilder/wappen/mini/559.gif?fallback=png",
+    BrentfordFC:"https://s.hs-data.com/bilder/wappen/mini/3271.gif?fallback=png",
+    Brighton: "https://s.hs-data.com/bilder/wappen/mini/3050.gif?fallback=png",
+    BurnleyFC: "https://s.hs-data.com/bilder/wappen/mini/3185.gif?fallback=png",
+    ChelseaFC: "https://s.hs-data.com/bilder/wappen/mini/544.gif?fallback=png",
+    CrystalPalace: "https://s.hs-data.com/bilder/wappen/mini/2242.gif?fallback=png",
+    EvertonFC: "https://s.hs-data.com/bilder/wappen/mini/560.gif?fallback=png",
+    LeedsUnited: "https://s.hs-data.com/bilder/wappen/mini/541.gif?fallback=png",
+    LeicesterCity: "https://s.hs-data.com/bilder/wappen/mini/549.gif?fallback=png",
+    LiverpoolFC: "https://s.hs-data.com/bilder/wappen/mini/550.gif?fallback=png",
+    ManchesterCity: "https://s.hs-data.com/bilder/wappen/mini/750.gif?fallback=png",
+    ManchesterUnited: "https://s.hs-data.com/bilder/wappen/mini/543.gif?fallback=png",
+    NewcastleUnited: "https://s.hs-data.com/bilder/wappen/mini/546.gif?fallback=png",
+    NorwichCity: "https://s.hs-data.com/bilder/wappen/mini/744.gif?fallback=png",
+    SouthamptonFC: "https://s.hs-data.com/bilder/wappen/mini/545.gif?fallback=png",
+    TottenhamHotspur: "https://s.hs-data.com/bilder/wappen/mini/552.gif?fallback=png",
+    WatfordFC: "https://s.hs-data.com/bilder/wappen/mini/747.gif?fallback=png",
+    WestHamUnited: "https://s.hs-data.com/bilder/wappen/mini/553.gif?fallback=png",
+    Wolves: "https://s.hs-data.com/bilder/wappen/mini/749.gif?fallback=png"
+};

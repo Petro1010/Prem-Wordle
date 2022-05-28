@@ -224,3 +224,13 @@ input {
   color: #37003c;
   font-size: 2vh;
 }
+
+.logo {
+  width: 4vh;
+  height: 4vh;
+}
+
+.flag {
+  width: 8vh;
+  height: 5vh;
+}
