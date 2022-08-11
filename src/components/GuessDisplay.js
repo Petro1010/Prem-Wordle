@@ -1,5 +1,5 @@
 import React from "react"
-import logos from "../crests.js"
+//import logos from "../crests.js"
 
 function GuessDisplay(props) {
     //determine the height and age differences
@@ -10,7 +10,7 @@ function GuessDisplay(props) {
         <div className="guess">
             <h4 className="name">{props.name}</h4>
             <div style={{backgroundColor: props.correct.team === props.team ? "#37be75" : "#f2f2f2"}}>
-                <img className="logo" src={logos[props.team.replace(/\s+/g, '')]}></img>
+                <img className="logo" src={props.logo/*logos[props.team.replace(/\s+/g, '')]*/}></img>
             </div>
             <div style={{backgroundColor: props.correct.nation === props.nation ? "#37be75" : "#f2f2f2"}}>
                 <img className="flag" src={"https://countryflagsapi.com/png/" + props.nation.replace(/\s+/g, '').toLowerCase()}></img>

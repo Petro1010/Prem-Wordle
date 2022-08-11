@@ -1,7 +1,6 @@
 import React from "react";
 import AutoCompleteInput from "./AutoCompleteInput";
 import GuessDisplay from "./GuessDisplay";
-import rawData from "../players.txt";
 import GamePopUp from "./GamePopUp";
 
 function Game(props){
@@ -18,15 +17,19 @@ function Game(props){
     //keep track of win or lose
     const [won, setWon] = React.useState(false);
 
-    //set up the players, with raw data for now
     React.useEffect(() => {
-        fetch(rawData)
-         .then(r => r.text())
-         .then(text => {
-            let data = JSON.parse(text);
-            setPlayers(data);
-            setRandomPlayer(data[Math.floor(Math.random()*data.length)])
-         });
+        fetch('https://premier-league-players1.p.rapidapi.com/players', {
+            method: 'GET',
+            headers: {
+              'X-RapidAPI-Key': '76fe66a335msh8b2d9ac803072f2p1cad14jsn3b295dcdecb6',
+              'X-RapidAPI-Host': 'premier-league-players1.p.rapidapi.com'
+            }})
+            .then(r => r.text())
+            .then(text => {
+                let data = JSON.parse(text);
+                setPlayers(data);
+                setRandomPlayer(data[Math.floor(Math.random()*data.length)])
+            });
     },[]);
 
     const updateLowestGuess = () => props.lowerGuess(guesses + 1);
@@ -34,11 +37,15 @@ function Game(props){
     function makeGuess(playerName) {
         if (!won && guesses < 20){
             const player = players.filter(player => player.name === playerName)[0] //filter data for the specfic player
+            console.log(player)
             if (currentGuesses.includes(player)) {
                 alert("Invalid Guess!")
             } else {
                 if (!currentGuesses.length) props.gamePlayed(); //once the first guess is made, it counts as a game played
                 setCurrentGuesses(prevGuesses => [...prevGuesses, player]);
+                console.log(randomPlayer.pid)
+                console.log(players)
+                console.log(player)
                 if (randomPlayer.pid === player.pid){
                     setShowPopUp(true);
                     setWon(true);
