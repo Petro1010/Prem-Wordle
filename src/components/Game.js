@@ -37,15 +37,11 @@ function Game(props){
     function makeGuess(playerName) {
         if (!won && guesses < 20){
             const player = players.filter(player => player.name === playerName)[0] //filter data for the specfic player
-            console.log(player)
             if (currentGuesses.includes(player)) {
                 alert("Invalid Guess!")
             } else {
                 if (!currentGuesses.length) props.gamePlayed(); //once the first guess is made, it counts as a game played
                 setCurrentGuesses(prevGuesses => [...prevGuesses, player]);
-                console.log(randomPlayer.pid)
-                console.log(players)
-                console.log(player)
                 if (randomPlayer.pid === player.pid){
                     setShowPopUp(true);
                     setWon(true);
