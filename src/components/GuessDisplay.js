@@ -1,7 +1,5 @@
 import React from "react"
 import {countryNameToCode} from "../constants/countryNameToCountryCode";
-import x from "../images/flagspng/ae.png"
-//import logos from "../crests.js"
 
 function GuessDisplay(props) {
     //determine the height and age differences
