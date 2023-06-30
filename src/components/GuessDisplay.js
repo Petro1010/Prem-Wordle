@@ -1,10 +1,18 @@
 import React from "react"
+import {countryNameToCode} from "../constants/countryNameToCountryCode";
+import x from "../images/flagspng/ae.png"
 //import logos from "../crests.js"
 
 function GuessDisplay(props) {
     //determine the height and age differences
     const heightCompare = props.height > props.correct.height ? " ↓" : (props.height === props.correct.height ? "" : " ↑");
     const ageCompare = props.age > props.correct.age ? " ↓" : (props.age === props.correct.age ? "" : " ↑");
+
+    function getCountryFlag(nation) {
+        let twoLetters = countryNameToCode[nation];
+        let imagePath = process.env.PUBLIC_URL + `/flagspng/${twoLetters}.png`;
+        return imagePath;
+    }
     return (
         //conditionally render background colour to show if the property is correct or not
         <div className="guess">
@@ -13,7 +21,7 @@ function GuessDisplay(props) {
                 <img className="logo" src={props.logo/*logos[props.team.replace(/\s+/g, '')]*/}></img>
             </div>
             <div style={{backgroundColor: props.correct.nation === props.nation ? "#37be75" : "#f2f2f2"}}>
-                <img className="flag" src={"https://countryflagsapi.com/png/" + props.nation.replace(/\s+/g, '').toLowerCase()}></img>
+                <img className="flag" src={`${getCountryFlag(props.nation.replace(/\s+/g, '').toLowerCase())}`} alt={props.nation}/>
             </div>
             <div 
                 style={{backgroundColor: props.correct.age === props.age ? "#37be75" : "#f2f2f2"}}
