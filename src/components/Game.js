@@ -18,18 +18,33 @@ function Game(props){
     const [won, setWon] = React.useState(false);
 
     React.useEffect(() => {
-        fetch('https://premier-league-players1.p.rapidapi.com/players', {
-            method: 'GET',
-            headers: {
-              'X-RapidAPI-Key': '76fe66a335msh8b2d9ac803072f2p1cad14jsn3b295dcdecb6',
-              'X-RapidAPI-Host': 'premier-league-players1.p.rapidapi.com'
-            }})
-            .then(r => r.text())
+        const fetchData = () => {
+            fetch('https://premier-league-players1.p.rapidapi.com/players', {
+                method: 'GET',
+                headers: {
+                  'X-RapidAPI-Key': '76fe66a335msh8b2d9ac803072f2p1cad14jsn3b295dcdecb6',
+                  'X-RapidAPI-Host': 'premier-league-players1.p.rapidapi.com'
+                }
+            })
+            .then(r => {
+                if (!r.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return r.text();
+            })
             .then(text => {
                 let data = JSON.parse(text);
                 setPlayers(data);
-                setRandomPlayer(data[Math.floor(Math.random()*data.length)])
+                setRandomPlayer(data[Math.floor(Math.random() * data.length)]);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                // Retry after 1 minute
+                setTimeout(fetchData, 60000);
             });
+        };
+    
+        fetchData();
     },[]);
 
     const updateLowestGuess = () => props.lowerGuess(guesses + 1);
@@ -110,7 +125,6 @@ function Game(props){
                 </div>
                 
             </div>
-
         </div>
 
     );

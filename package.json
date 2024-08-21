@@ -40,5 +40,9 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  }
+  },
+  "description": "Skrtel is a Premier League player guessing game inspired by the game \"wordle\".  \r You can play it here at: https://matpetro.github.io/prem-wordle/.  \r Makes use of the API found [here](https://github.com/matpetro/premPlayerApi)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

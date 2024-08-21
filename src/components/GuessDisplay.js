@@ -16,7 +16,7 @@ function GuessDisplay(props) {
         <div className="guess">
             <h4 className="name">{props.name}</h4>
             <div style={{backgroundColor: props.correct.team === props.team ? "#37be75" : "#f2f2f2"}}>
-                <img className="logo" src={props.logo/*logos[props.team.replace(/\s+/g, '')]*/}></img>
+                <img className="logo" src={process.env.PUBLIC_URL + `/eplLogos/${props.team}.png`}></img>
             </div>
             <div style={{backgroundColor: props.correct.nation === props.nation ? "#37be75" : "#f2f2f2"}}>
                 <img className="flag" src={`${getCountryFlag(props.nation.replace(/\s+/g, '').toLowerCase())}`} alt={props.nation}/>
